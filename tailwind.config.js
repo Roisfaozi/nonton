@@ -9,6 +9,7 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
+      'hover-hover': { raw: '(hover: hover)' },
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
@@ -18,7 +19,7 @@ module.exports = {
       white: colors.white,
       slate: colors.slate,
       gray: colors.gray,
-      zinc: colors.zinc,
+      zinc: { ...colors.zinc, 905: '#18181b99' },
       neutral: colors.neutral,
       stone: colors.stone,
       red: colors.red,
@@ -81,6 +82,7 @@ module.exports = {
       5: '1.25rem',
       6: '1.5rem',
       7: '1.75rem',
+      7.8: '1.88rem',
       8: '2rem',
       9: '2.25rem',
       10: '2.5rem',
@@ -129,13 +131,19 @@ module.exports = {
     backgroundImage: {
       none: 'none',
       'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
-      'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
+      'gradient-to-tr':
+        'linear-gradient(to top right, var(--tw-gradient-stops))',
       'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
-      'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
+      'gradient-to-br':
+        'linear-gradient(to bottom right, var(--tw-gradient-stops))',
       'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
-      'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
+      'gradient-to-bl':
+        'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
-      'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'gradient-to-tl':
+        'linear-gradient(to top left, var(--tw-gradient-stops))',
+      'hero-gradient': 'linear-gradient(to top, #0f0f0f, rgba(0, 0, 0, 0));',
+      'card-body': 'linear-gradient(to bottom, #04080f0a, #192133 30%);',
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     backgroundPosition: {
@@ -215,6 +223,7 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
       inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
       none: 'none',
+      poster: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',
     },
     boxShadowColor: ({ theme }) => theme('colors'),
     caretColor: ({ theme }) => theme('colors'),
@@ -349,12 +358,12 @@ module.exports = {
     },
     fontFamily: {
       sans: [
+        'Roboto',
         'ui-sans-serif',
         'system-ui',
         '-apple-system',
         'BlinkMacSystemFont',
         '"Segoe UI"',
-        'Roboto',
         '"Helvetica Neue"',
         'Arial',
         '"Noto Sans"',
@@ -364,7 +373,14 @@ module.exports = {
         '"Segoe UI Symbol"',
         '"Noto Color Emoji"',
       ],
-      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+      serif: [
+        'ui-serif',
+        'Georgia',
+        'Cambria',
+        '"Times New Roman"',
+        'Times',
+        'serif',
+      ],
       mono: [
         'ui-monospace',
         'SFMono-Regular',
@@ -841,7 +857,9 @@ module.exports = {
       200: '200ms',
       300: '300ms',
       500: '500ms',
+      600: '600ms',
       700: '700ms',
+      900: '900ms',
       1000: '1000ms',
     },
     transitionDuration: {
@@ -854,16 +872,20 @@ module.exports = {
       500: '500ms',
       700: '700ms',
       1000: '1000ms',
+      double: '0.5s, 0.5s',
     },
     transitionProperty: {
       none: 'none',
       all: 'all',
       DEFAULT:
         'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-      colors: 'color, background-color, border-color, text-decoration-color, fill, stroke',
+      colors:
+        'color, background-color, border-color, text-decoration-color, fill, stroke',
       opacity: 'opacity',
       shadow: 'box-shadow',
       transform: 'transform',
+      width: 'width',
+      double: 'transform, opacity',
     },
     transitionTimingFunction: {
       DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
@@ -871,6 +893,7 @@ module.exports = {
       in: 'cubic-bezier(0.4, 0, 1, 1)',
       out: 'cubic-bezier(0, 0, 0.2, 1)',
       'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+      double: 'ease, ease',
     },
     translate: ({ theme }) => ({
       ...theme('spacing'),
@@ -911,6 +934,7 @@ module.exports = {
       '9/12': '75%',
       '10/12': '83.333333%',
       '11/12': '91.666667%',
+      55: '55%',
       full: '100%',
       screen: '100vw',
       min: 'min-content',
@@ -931,6 +955,7 @@ module.exports = {
       30: '30',
       40: '40',
       50: '50',
+      99: '99',
     },
   },
   variantOrder: [

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import 'swiper/css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
