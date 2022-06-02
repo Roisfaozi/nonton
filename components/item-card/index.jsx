@@ -33,13 +33,15 @@ export default function ItemCard({ item }) {
           <a title={item.title} className='streched-link'></a>
         </Link>
         {isShown && (
-          <div class='card-body'>
-            <h2 class='name'>{item.title || item.name}</h2>
-            <h6 class='des'>{item.overview.slice(0, 50) + '...'}</h6>
+          <div className='card-body'>
+            <h2 className='name'>{item.title || item.name}</h2>
+            <h6 className='des'>
+              {item.overview ? item.overview.slice(0, 50) + '...' : ''}
+            </h6>
             <Link key={item.id} href='/movie/[id]' as={`/movie/${item.id}`}>
               <a title={item.title} className='streched-link'></a>
             </Link>
-            <button class='watchlist-btn'>add to watchlist</button>
+            <button className='watchlist-btn'>add to watchlist</button>
           </div>
         )}
       </div>

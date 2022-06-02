@@ -9,7 +9,7 @@
 }
 
 body {
-  @apply font-normal  bg-slate-900 text-white sm:mb-12;
+  @apply font-normal  bg-slate-900 text-white mb-12 sm:mb-0;
 }
 
 a {
@@ -228,3 +228,17 @@ text-[60%];
 }
 
 /*  END Item Components */
+
+/* Start Footer */
+
+footer {
+  @apply bg-slate-800 text-center lg:text-left;
+}
+
+.footer-container {
+  @apply text-gray-200 text-center p-4;
+}
+.footer-container a {
+  @apply text-gray-300;
+}
+/* Start Footer */
