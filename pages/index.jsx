@@ -25,16 +25,16 @@ export default function Home({
   return (
     <div>
       <Header />
-      <HeroCarousel moviesPopular={moviesPopular} />
+      <HeroCarousel popular={moviesPopular} />
       {/* Movies Collection */}
       <ItemsCollection results={moviesPlaying} title='Now Playing' />
-      <ItemsCollection results={moviesPopular} title='Trending Movies' />
-      <ItemsCollection results={moviesUpcoming} title='Upcoming Movies' />
-      <ItemsCollection results={topRatedMovies} title='Top Rated Movies' />
+      <ItemsCollection results={moviesPopular} title='Trending' />
+      <ItemsCollection results={moviesUpcoming} title='Upcoming' />
+      <ItemsCollection results={topRatedMovies} title='Top Rated' />
 
       {/* TV/Series Collection */}
-      <ItemsCollection results={tvAiring} title='Airing Today TV Shows' />
-      <ItemsCollection results={tvOnTheAir} title='Airing TV Shows' />
+      <ItemsCollection results={tvAiring} title='Airing Today TV' />
+      <ItemsCollection results={tvOnTheAir} title='Airing TV' />
       <ItemsCollection results={tvPopular} title='Trending TV' />
       <ItemsCollection results={topRatedTv} title='Top Rated TV' />
     </div>
