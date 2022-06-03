@@ -207,24 +207,12 @@ text-[60%];
 }
 
 .watchlist-btn {
-  position: relative;
-  width: 100%;
-  text-transform: capitalize;
-  background: none;
-  border: none;
-  font-weight: 500;
-  text-align: right;
-  font-size: 9px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 2px 0;
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 5px;
+  @apply relative w-full capitalize bg-none border-none font-medium text-right text-[9px] text-white/50 my-[2px] cursor-pointer p-1 rounded;
 }
 
 .watchlist-btn:hover {
+  @apply text-white bg-white/10;
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
 }
 
 /*  END Item Components */
