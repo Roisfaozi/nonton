@@ -6,7 +6,7 @@ export default function ItemCard({ item }) {
   return (
     <div className='item-card'>
       <div
-        class='card'
+        className='card'
         onMouseEnter={() => setShown(true)}
         onMouseLeave={() => setShown(false)}>
         <img

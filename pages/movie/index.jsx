@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/header'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemsCollection from '../../components/items-collections'
 import {
@@ -17,13 +16,12 @@ export default function Movie({
 }) {
   return (
     <div>
-      <Header />
       <HeroCarousel popular={moviesPopular} />
       {/* Movies Collection */}
       <ItemsCollection results={moviesPlaying} title='Now Playing' />
-      <ItemsCollection results={moviesPopular} title='Trending Movies' />
-      <ItemsCollection results={moviesUpcoming} title='Upcoming Movies' />
-      <ItemsCollection results={topRatedMovies} title='Top Rated Movies' />
+      <ItemsCollection results={moviesPopular} title='Popular' />
+      <ItemsCollection results={moviesUpcoming} title='Upcoming' />
+      <ItemsCollection results={topRatedMovies} title='Top Rated' />
     </div>
   )
 }
@@ -43,10 +41,10 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      moviesPopular: moviesPopular.data.results,
-      moviesPlaying: moviesPlaying.data.results,
-      moviesUpcoming: moviesUpcoming.data.results,
-      topRatedMovies: topRatedMovies.data.results,
+      moviesPopular: moviesPopular.results,
+      moviesPlaying: moviesPlaying.results,
+      moviesUpcoming: moviesUpcoming.results,
+      topRatedMovies: topRatedMovies.results,
     },
   }
 }

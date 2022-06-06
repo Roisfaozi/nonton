@@ -1,58 +1,94 @@
-import axios from 'axios'
-
-const baseUrl = process.env.API_URL
-const apiKey = process.env.API_KEY
-
-export const moviesType = {
-  now_playing: 'now_playing',
-  upcoming: 'upcoming',
-  popular: 'popular',
-  top_rated: 'top_rated',
-  similiar: 'similiar',
-  recommendations: 'recommendations',
-}
-
-export const tvType = {
-  airing_today: 'airing_today',
-  popular: 'popular',
-  top_rated: 'top_rated',
-  on_the_air: 'on_the_air',
-  similiar: 'similiar',
-  recommendations: 'recommendations',
-}
+import axios from './axios'
 
 // Movies Endpoint
+export const moviesEndpoint = {
+  getMovies: (category, params) => {
+    const url = `movie/${category}`
 
-export const getMoviesById = (id) =>
-  axios.get(`${baseUrl}/movie/${id}?api_key=${apiKey}`)
-export const getMoviesPlaying = () =>
-  axios.get(`${baseUrl}/movie/${moviesType.now_playing}?api_key=${apiKey}`)
+    return axios.get(url, params)
+  },
+  getMoviesById: (id, params) => {
+    const url = `movie/${id}`
 
-export const getMoviesPopular = () =>
-  axios.get(`${baseUrl}/movie/${moviesType.popular}?api_key=${apiKey}`)
-export const getMoviesUpcoming = () =>
-  axios.get(`${baseUrl}/movie/${moviesType.upcoming}?api_key=${apiKey}`)
-export const getMoviesTopRated = () =>
-  axios.get(`${baseUrl}/movie/${moviesType.top_rated}?api_key=${apiKey}`)
-export const getMoviesRecommendations = (id) =>
-  axios.get(
-    `${baseUrl}/movie/${id}/${moviesType.recommendations}?api_key=${apiKey}`
-  )
-export const getMoviesSimiliar = (id) =>
-  axios.get(`${baseUrl}/movie/${id}/${moviesType.similiar}?api_key=${apiKey}`)
+    return axios.get(url, params)
+  },
+  getMoviesTopRated: (params) => {
+    const url = 'movie/top_rated'
+
+    return axios.get(url, params)
+  },
+  getMoviesUpcoming: (params) => {
+    const url = 'movie/upcoming'
+
+    return axios.get(url, params)
+  },
+  getMoviesPopular: (params) => {
+    const url = 'movie/popular'
+
+    return axios.get(url, params)
+  },
+  getMoviesPlaying: (params) => {
+    const url = 'movie/now_playing'
+
+    return axios.get(url, params)
+  },
+  getMoviesRecommendations: (id, params) => {
+    const url = `movie/${id}/recommendations`
+
+    return axios.get(url, params)
+  },
+  getMoviesSimiliar: (id, params) => {
+    const url = `movie/${id}/similiar`
+
+    return axios.get(url, params)
+  },
+  getTV: (category, params) => {
+    const url = `tv/${category}`
+
+    return axios.get(url, params)
+  },
+}
 
 // TV Endpoint
-export const getTvById = (id) =>
-  axios.get(`${baseUrl}/tv/${id}?api_key=${apiKey}`)
-export const getTvPopular = () =>
-  axios.get(`${baseUrl}/tv/${tvType.popular}?api_key=${apiKey}`)
-export const getTvAiring = () =>
-  axios.get(`${baseUrl}/tv/${tvType.airing_today}?api_key=${apiKey}`)
-export const getTvTopRated = () =>
-  axios.get(`${baseUrl}/tv/${tvType.top_rated}?api_key=${apiKey}`)
-export const getTvOnTheAir = () =>
-  axios.get(`${baseUrl}/tv/${tvType.on_the_air}?api_key=${apiKey}`)
-export const getTvRecommendations = (id) =>
-  axios.get(`${baseUrl}/tv/${id}/${tvType.recommendations}?api_key=${apiKey}`)
-export const getTvSimiliar = (id) =>
-  axios.get(`${baseUrl}/tv/${id}/${tvType.similiar}?api_key=${apiKey}`)
+export const tvEndpoint = {
+  getTV: (category, params) => {
+    const url = `tv/${category}`
+
+    return axios.get(url, params)
+  },
+  getTvById: (id, params) => {
+    const url = `tv/${id}`
+
+    return axios.get(url, params)
+  },
+  getTvTopRated: (params) => {
+    const url = 'tv/top_rated'
+
+    return axios.get(url, params)
+  },
+  getTvAiring: (params) => {
+    const url = 'tv/airing_today'
+
+    return axios.get(url, params)
+  },
+  getTvPopular: (params) => {
+    const url = 'tv/popular'
+
+    return axios.get(url, params)
+  },
+  getTvOnTheAir: (params) => {
+    const url = 'tv/on_the_air'
+
+    return axios.get(url, params)
+  },
+  getTvRecommendations: (id, params) => {
+    const url = `tv/${id}/recommendations`
+
+    return axios.get(url, params)
+  },
+  getTvSimiliar: (id, params) => {
+    const url = `tv/${id}/similiar`
+
+    return axios.get(url, params)
+  },
+}

@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../../components/header'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemsCollection from '../../components/items-collections'
 import {
@@ -12,12 +11,11 @@ import {
 export default function Movie({ tvAiring, tvPopular, tvOnTheAir, topRatedTv }) {
   return (
     <div>
-      <Header />
       <HeroCarousel popular={tvPopular} />
       {/* Movies Collection */}
-      <ItemsCollection results={tvAiring} title='Airing Today TV Shows' />
-      <ItemsCollection results={tvOnTheAir} title='Airing TV Shows' />
-      <ItemsCollection results={tvPopular} title='Trending TV' />
+      <ItemsCollection results={tvAiring} title='Airing Today TV' />
+      <ItemsCollection results={tvOnTheAir} title='Airing TV' />
+      <ItemsCollection results={tvPopular} title='Popular TV' />
       <ItemsCollection results={topRatedTv} title='Top Rated TV' />
     </div>
   )

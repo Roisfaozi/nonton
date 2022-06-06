@@ -41,7 +41,7 @@ a {
 /*  START Header */
 
 .hero-carousel {
-  @apply mb-12;
+  @apply mb-8;
 }
 .logo {
   @apply text-3xl font-semibold flex items-center;
@@ -217,7 +217,15 @@ text-[60%];
 
 /*  END Item Components */
 
-/* Start Footer */
+/* START Item grid */
+
+.item-grid {
+  @apply grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-4;
+}
+
+/* END Item grid */
+
+/* START Footer */
 
 footer {
   @apply bg-slate-800 text-center lg:text-left;

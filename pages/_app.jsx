@@ -3,6 +3,7 @@ import Script from 'next/script'
 import 'swiper/css'
 import 'tailwindcss/tailwind.css'
 import Footer from '../components/footer'
+import Header from '../components/header'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -161,6 +162,8 @@ function MyApp({ Component, pageProps }) {
           />
         </a>
       </Head>
+      <Header {...pageProps} />
+
       <Component {...pageProps} />
       <Footer />
     </>

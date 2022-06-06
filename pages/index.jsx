@@ -1,16 +1,6 @@
-import Header from '../components/header'
 import HeroCarousel from '../components/hero-carousel'
 import ItemsCollection from '../components/items-collections'
-import {
-  getMoviesPlaying,
-  getMoviesPopular,
-  getMoviesTopRated,
-  getMoviesUpcoming,
-  getTvAiring,
-  getTvOnTheAir,
-  getTvPopular,
-  getTvTopRated,
-} from '../service'
+import { moviesEndpoint, tvEndpoint } from '../service'
 
 export default function Home({
   moviesPopular,
@@ -24,27 +14,24 @@ export default function Home({
 }) {
   return (
     <div>
-      <Header />
       <HeroCarousel popular={moviesPopular} />
       {/* Movies Collection */}
       <ItemsCollection results={moviesPlaying} title='Now Playing' />
-      <ItemsCollection results={moviesPopular} title='Trending' />
+      <ItemsCollection results={moviesPopular} title='Popular' />
       <ItemsCollection results={moviesUpcoming} title='Upcoming' />
       <ItemsCollection results={topRatedMovies} title='Top Rated' />
 
       {/* TV/Series Collection */}
       <ItemsCollection results={tvAiring} title='Airing Today TV' />
-      <ItemsCollection results={tvOnTheAir} title='Airing TV' />
-      <ItemsCollection results={tvPopular} title='Trending TV' />
+      <ItemsCollection results={tvOnTheAir} title='On The Air TV' />
+      <ItemsCollection results={tvPopular} title='Popular TV' />
       <ItemsCollection results={topRatedTv} title='Top Rated TV' />
     </div>
   )
 }
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  // const moviesPopular = await getMoviesPopular()
-  // const nowPlaying = await getMoviesPlaying()
+  const params = {}
 
   const [
     moviesPopular,
@@ -56,26 +43,26 @@ export async function getServerSideProps() {
     tvPopular,
     topRatedTv,
   ] = await Promise.all([
-    getMoviesPopular(),
-    getMoviesPlaying(),
-    getMoviesUpcoming(),
-    getMoviesTopRated(),
-    getTvAiring(),
-    getTvOnTheAir(),
-    getTvPopular(),
-    getTvTopRated(),
+    moviesEndpoint.getMoviesPopular(params),
+    moviesEndpoint.getMoviesPlaying(params),
+    moviesEndpoint.getMoviesUpcoming(params),
+    moviesEndpoint.getMoviesTopRated(params),
+    tvEndpoint.getTvAiring(),
+    tvEndpoint.getTvOnTheAir(),
+    tvEndpoint.getTvPopular(),
+    tvEndpoint.getTvTopRated(),
   ])
 
   return {
     props: {
-      moviesPopular: moviesPopular.data.results,
-      moviesPlaying: moviesPlaying.data.results,
-      moviesUpcoming: moviesUpcoming.data.results,
-      topRatedMovies: topRatedMovies.data.results,
-      tvAiring: tvAiring.data.results,
-      tvOnTheAir: tvOnTheAir.data.results,
-      tvPopular: tvPopular.data.results,
-      topRatedTv: topRatedTv.data.results,
+      moviesPopular: moviesPopular.results,
+      moviesPlaying: moviesPlaying.results,
+      moviesUpcoming: moviesUpcoming.results,
+      topRatedMovies: topRatedMovies.results,
+      tvAiring: tvAiring.results,
+      tvOnTheAir: tvOnTheAir.results,
+      tvPopular: tvPopular.results,
+      topRatedTv: topRatedTv.results,
     },
   }
 }
