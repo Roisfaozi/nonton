@@ -9,7 +9,7 @@ export default function Movie({ tvAiring, tvPopular, tvOnTheAir, topRatedTv }) {
       <HeroCarousel popular={tvPopular} />
       {/* Movies Collection */}
       <ItemsCollection results={tvAiring} title='Airing Today TV' />
-      <ItemsCollection results={tvOnTheAir} title='Airing TV' />
+      <ItemsCollection results={tvOnTheAir} title='On The Air TV' />
       <ItemsCollection results={tvPopular} title='Popular TV' />
       <ItemsCollection results={topRatedTv} title='Top Rated TV' />
     </div>

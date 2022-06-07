@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemCard from '../../components/item-card'
 import TitlePage from '../../components/title-page'
-import { moviesEndpoint } from '../../service'
+import { tvEndpoint } from '../../service'
 
 function category(props) {
   const { movies, category, totalPages, currentPage } = props
@@ -51,8 +51,8 @@ function category(props) {
 export async function getServerSideProps({ query }) {
   // Fetch data from external API
   const page = query.page || 1
-  const category = query.category.replace('-', '_')
-  const data = await moviesEndpoint.getMovies(category, {
+  const category = query.category.replaceAll('-', '_')
+  const data = await tvEndpoint.getTV(category, {
     params: { page: page },
   })
   return {
