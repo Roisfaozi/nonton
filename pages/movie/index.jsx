@@ -1,12 +1,7 @@
 import React from 'react'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemsCollection from '../../components/items-collections'
-import {
-  getMoviesPlaying,
-  getMoviesPopular,
-  getMoviesTopRated,
-  getMoviesUpcoming,
-} from '../../service'
+import { moviesEndpoint } from '../../service'
 
 export default function Movie({
   moviesPopular,
@@ -27,16 +22,12 @@ export default function Movie({
 }
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  // const moviesPopular = await getMoviesPopular()
-  // const nowPlaying = await getMoviesPlaying()
-
   const [moviesPopular, moviesPlaying, moviesUpcoming, topRatedMovies] =
     await Promise.all([
-      getMoviesPopular(),
-      getMoviesPlaying(),
-      getMoviesUpcoming(),
-      getMoviesTopRated(),
+      moviesEndpoint.getMoviesPopular(),
+      moviesEndpoint.getMoviesPlaying(),
+      moviesEndpoint.getMoviesUpcoming(),
+      moviesEndpoint.getMoviesTopRated(),
     ])
 
   return {

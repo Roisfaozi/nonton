@@ -225,6 +225,30 @@ text-[60%];
 
 /* END Item grid */
 
+/* START Pagination */
+
+.pagination {
+  @apply flex items-center list-none h-10 border border-solid border-slate-700  rounded-md w-fit mt-10 mx-auto;
+}
+.pagination li {
+  @apply flex items-center cursor-pointer px-3 text-base capitalize bg-slate-800 hover:bg-gray-900 h-full;
+}
+
+.pagination li.active {
+  @apply font-bold no-underline text-red-600;
+}
+/* END Pagination */
+
+/* START Title page */
+.title-page {
+  @apply text-center mb-8 relative;
+}
+.title-page h2 {
+  @apply capitalize relative z-99 font-semibold text-2xl tracking-wider;
+}
+
+/* END Title page */
+
 /* START Footer */
 
 footer {

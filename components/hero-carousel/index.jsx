@@ -52,7 +52,7 @@ const HeroContent = (props) => {
             alt={item.title || item.name}
           />
         </div>
-        <Link key={item.id} href='/movie/[id]' as={`/movie/${item.id}`}>
+        <Link key={item.id} href='/movie/[id]?page' as={`/movie/${item.id}`}>
           <a title={item.title || item.name} className='streched-link'></a>
         </Link>
         <div className='hero-slide-item-content-info'>

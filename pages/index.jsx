@@ -31,8 +31,6 @@ export default function Home({
 }
 
 export async function getServerSideProps() {
-  const params = {}
-
   const [
     moviesPopular,
     moviesPlaying,
@@ -43,10 +41,10 @@ export async function getServerSideProps() {
     tvPopular,
     topRatedTv,
   ] = await Promise.all([
-    moviesEndpoint.getMoviesPopular(params),
-    moviesEndpoint.getMoviesPlaying(params),
-    moviesEndpoint.getMoviesUpcoming(params),
-    moviesEndpoint.getMoviesTopRated(params),
+    moviesEndpoint.getMoviesPopular(),
+    moviesEndpoint.getMoviesPlaying(),
+    moviesEndpoint.getMoviesUpcoming(),
+    moviesEndpoint.getMoviesTopRated(),
     tvEndpoint.getTvAiring(),
     tvEndpoint.getTvOnTheAir(),
     tvEndpoint.getTvPopular(),

@@ -1,12 +1,7 @@
 import React from 'react'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemsCollection from '../../components/items-collections'
-import {
-  getTvAiring,
-  getTvOnTheAir,
-  getTvPopular,
-  getTvTopRated,
-} from '../../service'
+import { tvEndpoint } from '../../service'
 
 export default function Movie({ tvAiring, tvPopular, tvOnTheAir, topRatedTv }) {
   return (
@@ -22,23 +17,19 @@ export default function Movie({ tvAiring, tvPopular, tvOnTheAir, topRatedTv }) {
 }
 
 export async function getServerSideProps() {
-  // Fetch data from external API
-  // const moviesPopular = await getMoviesPopular()
-  // const nowPlaying = await getMoviesPlaying()
-
   const [tvAiring, tvOnTheAir, tvPopular, topRatedTv] = await Promise.all([
-    getTvAiring(),
-    getTvOnTheAir(),
-    getTvPopular(),
-    getTvTopRated(),
+    tvEndpoint.getTvAiring(),
+    tvEndpoint.getTvOnTheAir(),
+    tvEndpoint.getTvPopular(),
+    tvEndpoint.getTvTopRated(),
   ])
 
   return {
     props: {
-      tvAiring: tvAiring.data.results,
-      tvOnTheAir: tvOnTheAir.data.results,
-      tvPopular: tvPopular.data.results,
-      topRatedTv: topRatedTv.data.results,
+      tvAiring: tvAiring.results,
+      tvOnTheAir: tvOnTheAir.results,
+      tvPopular: tvPopular.results,
+      topRatedTv: topRatedTv.results,
     },
   }
 }
