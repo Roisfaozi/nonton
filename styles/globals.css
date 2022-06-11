@@ -261,4 +261,40 @@ footer {
 .footer-container a {
   @apply text-gray-300;
 }
-/* Start Footer */
+/* END Footer */
+
+/* START Details */
+
+.movie-content {
+  @apply flex items-start justify-start max-w-7xl relative px-8 mb-3;
+}
+
+.movie-content-poster {
+  @apply flex-1 w-full;
+}
+
+.movie-content-poster-img {
+  @apply rounded-3xl;
+}
+.movie-content-info {
+  @apply sm:w-3/4 w-full sm:pl-8 pl-0 relative;
+}
+
+.movie-content-info > * {
+  @apply mb-5;
+}
+.movie-content-info .title {
+  @apply text-7xl;
+}
+
+.detail {
+  @apply flex flex-wrap items-center text-gray-300 text-base my-4;
+}
+.movie-content-info .genres > * ~ * {
+  @apply ml-2;
+}
+
+.movie-content-info .genres-item {
+  @apply text-blue-800 font-semibold;
+}
+/* END Details */

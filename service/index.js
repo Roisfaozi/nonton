@@ -7,6 +7,11 @@ export const moviesEndpoint = {
 
     return axios.get(url, params)
   },
+  getMoviesCredit: (id, params) => {
+    const url = `movie/${id}/credits`
+
+    return axios.get(url, params)
+  },
   getMoviesById: (id, params) => {
     const url = `movie/${id}`
 
