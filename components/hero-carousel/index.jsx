@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import slugify from 'slugify'
 import SwiperCore, { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Button from '../button'
@@ -52,7 +52,10 @@ const HeroContent = (props) => {
             alt={item.title || item.name}
           />
         </div>
-        <Link key={item.id} href='/movie/[id]?page' as={`/movie/${item.id}`}>
+        <Link
+          key={item.id}
+          href='/movie/[...id]'
+          as={`/movie/${item.id}/${slugify(`${item.title}`, { lower: true })}`}>
           <a title={item.title || item.name} className='streched-link'></a>
         </Link>
         <div className='hero-slide-item-content-info'>

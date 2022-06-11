@@ -7,7 +7,7 @@ import TitlePage from '../../components/title-page'
 import { tvEndpoint } from '../../service'
 
 function category(props) {
-  const { movies, category, totalPages, currentPage } = props
+  const { items, category, totalPages, currentPage } = props
   const pagginationHandler = (page) => {
     const currentPath = props.router.aspath
     const currentQuery = { ...props.router.query }
@@ -21,11 +21,11 @@ function category(props) {
   }
   return (
     <>
-      <HeroCarousel popular={movies} />
+      <HeroCarousel popular={items} />
       <TitlePage category={category} />
       <div className='section'>
         <div className='item-grid'>
-          {movies.map((item, i) => (
+          {items.map((item, i) => (
             <ItemCard key={i} item={item} />
           ))}
         </div>
@@ -51,13 +51,14 @@ function category(props) {
 export async function getServerSideProps({ query }) {
   // Fetch data from external API
   const page = query.page || 1
+  console.log(page)
   const category = query.category.replaceAll('-', '_')
   const data = await tvEndpoint.getTV(category, {
     params: { page: page },
   })
   return {
     props: {
-      movies: data.results,
+      items: data.results,
       category: query.category,
       totalPages: data.total_pages,
       currentPage: data.page,

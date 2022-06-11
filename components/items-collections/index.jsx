@@ -1,18 +1,19 @@
 import Link from 'next/link'
-import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import ItemCard from '../item-card'
 
 export default function ItemsCollection(props) {
   const { results, title } = props
-  const titleProps = title.toLowerCase().replaceAll(' ', '-')
-  const url = titleProps.replace('-tv', '')
+  const titleSlug = title.toLowerCase().replaceAll(' ', '-')
+  const url = titleSlug.replace('-tv', '')
 
   return (
     <div className='section mb-3'>
       <div className='section-head'>
         <h2>{title}</h2>
-        <Link href={title.includes('TV') ? `/tv/${url}` : `/movie/${url}`}>
+        <Link
+          href={title.includes('TV') ? `/tv/[category]` : `/movie/[category]`}
+          as={title.includes('TV') ? `/tv/${url}` : `/movie/${url}`}>
           <a className='small'>View more</a>
         </Link>
       </div>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import React, { useState } from 'react'
+import { useState } from 'react'
+import slugify from 'slugify'
 
 export default function ItemCard({ item }) {
   const [isShown, setShown] = useState(false)
@@ -14,7 +15,10 @@ export default function ItemCard({ item }) {
           alt={item.title}
           className='card-img'
         />
-        <Link key={item.id} href='/movie/[id]' as={`/movie/${item.id}`}>
+        <Link
+          key={item.id}
+          href='/movie/[...id]'
+          as={`/movie/${item.id}/${slugify(`${item.title}`, { lower: true })}`}>
           <a title={item.title} className='streched-link'></a>
         </Link>
         {isShown && (
@@ -23,7 +27,12 @@ export default function ItemCard({ item }) {
             <h6 className='des'>
               {item.overview ? item.overview.slice(0, 50) + '...' : ''}
             </h6>
-            <Link key={item.id} href='/movie/[id]' as={`/movie/${item.id}`}>
+            <Link
+              key={item.id}
+              href='/movie/[...id]'
+              as={`/movie/${item.id}/${slugify(`${item.title}`, {
+                lower: true,
+              })}`}>
               <a title={item.title} className='streched-link'></a>
             </Link>
             <button className='watchlist-btn'>add to watchlist</button>
