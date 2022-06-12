@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { withRouter } from 'next/router'
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import logo from '../../assets/tmovie.png'
 
 const navigation = [
@@ -26,8 +26,8 @@ function Header({ router }) {
   useEffect(() => {
     const shrinkHeader = () => {
       if (
-        document.body.scrollTop > 100 ||
-        document.documentElement.scrollTop > 100
+        document.body.scrollTop > 80 ||
+        document.documentElement.scrollTop > 80
       ) {
         headerRef.current.classList.add('shrink')
       } else {

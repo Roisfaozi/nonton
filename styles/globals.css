@@ -100,7 +100,7 @@ a {
   @apply lg:text-2xl text-3xl font-bold;
 }
 .streched-link {
-  @apply absolute inset-0 cursor-pointer;
+  @apply absolute inset-0 cursor-pointer w-full h-full;
 }
 
 .hero-slide-item-content-info .overview {
@@ -264,6 +264,21 @@ footer {
 /* END Footer */
 
 /* START Details */
+
+.masthead-container {
+  @apply pt-20 relative h-auto w-full;
+}
+
+.masthead-card {
+  @apply w-full cursor-pointer sm:h-full relative text-white mb-12 h-auto;
+}
+.masthead-video {
+  @apply max-h-fit w-auto h-full m-auto;
+}
+
+.video-container {
+  @apply sm:h-auto h-64 w-full min-h-[400px] m-auto  lg:w-[calc(100%-105px)];
+}
 
 .movie-content {
   @apply flex items-start justify-start max-w-7xl relative px-8 mb-3;

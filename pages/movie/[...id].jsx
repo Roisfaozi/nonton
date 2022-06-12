@@ -1,13 +1,11 @@
-import MoviesHead from '../../components/movies-head'
 import MoviesInfo from '../../components/movies-info'
+import PlayerHead from '../../components/player-head'
 import { moviesEndpoint } from '../../service'
 
-export default function index({ movie, credits }) {
-  console.log(movie.release_date.slice(0, 4))
-
+export default function index({ movie, credits, videos }) {
   return (
     <div>
-      <MoviesHead movie={movie} />
+      <PlayerHead movie={movie} videos={videos} />
 
       <MoviesInfo movie={movie} />
     </div>
@@ -16,12 +14,17 @@ export default function index({ movie, credits }) {
 
 export async function getServerSideProps({ query }) {
   const id = query.id[0]
-  const movie = await moviesEndpoint.getMoviesById(id)
-  const credits = await moviesEndpoint.getMoviesCredit(id)
+  const movie = await moviesEndpoint.getMoviesById(id, {
+    params: {
+      append_to_response: 'videos,images,credits,similar,recommendations',
+    },
+  })
+
   return {
     props: {
       movie: movie,
-      credits: credits,
+      credits: movie.credits,
+      videos: movie.videos.results,
     },
   }
 }

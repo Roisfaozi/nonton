@@ -1,5 +1,4 @@
 import { withRouter } from 'next/router'
-import React from 'react'
 import ReactPaginate from 'react-paginate'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemCard from '../../components/item-card'
@@ -12,7 +11,6 @@ function category(props) {
     const currentPath = props.router.aspath
     const currentQuery = { ...props.router.query }
     currentQuery.page = page.selected + 1
-    console.log(page)
 
     props.router.push({
       pathname: currentPath,
@@ -51,7 +49,6 @@ function category(props) {
 export async function getServerSideProps({ query }) {
   // Fetch data from external API
   const page = query.page || 1
-  console.log(page)
   const category = query.category.replaceAll('-', '_')
   const data = await tvEndpoint.getTV(category, {
     params: { page: page },
