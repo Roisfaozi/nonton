@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import slugify from 'slugify'
 
-export default function ItemCard({ item, title }) {
+export default function ItemCard({ item, title, isTv }) {
   const [isShown, setShown] = useState(false)
   return (
     <div className='item-card'>
@@ -19,9 +19,9 @@ export default function ItemCard({ item, title }) {
         />
         <Link
           key={item.id}
-          href={title.includes('TV') ? `/tv/[...id]` : `/movie/[...id]`}
+          href={isTv ? `/tv/[...id]` : `/movie/[...id]`}
           as={
-            title.includes('TV')
+            isTv
               ? `/tv/${item.id}/${slugify(`${item.title || item.name}`, {
                   lower: true,
                 })}`
@@ -39,9 +39,9 @@ export default function ItemCard({ item, title }) {
             </h6>
             <Link
               key={item.id}
-              href={title.includes('TV') ? `/tv/[...id]` : `/movie/[...id]`}
+              href={isTv ? `/tv/[...id]` : `/movie/[...id]`}
               as={
-                title.includes('TV')
+                isTv
                   ? `/tv/${item.id}/${slugify(`${item.title || item.name}`, {
                       lower: true,
                     })}`

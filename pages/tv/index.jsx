@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemsCollection from '../../components/items-collections'
 import { tvEndpoint } from '../../service'
@@ -8,10 +7,10 @@ export default function Movie({ tvAiring, tvPopular, tvOnTheAir, topRatedTv }) {
     <div>
       <HeroCarousel popular={tvPopular} />
       {/* Movies Collection */}
-      <ItemsCollection results={tvAiring} title='Airing Today TV' />
-      <ItemsCollection results={tvOnTheAir} title='On The Air TV' />
-      <ItemsCollection results={tvPopular} title='Popular TV' />
-      <ItemsCollection results={topRatedTv} title='Top Rated TV' />
+      <ItemsCollection results={tvAiring} title='Airing Today TV' isTv={true} />
+      <ItemsCollection results={tvOnTheAir} title='On The Air TV' isTv={true} />
+      <ItemsCollection results={tvPopular} title='Popular TV' isTv={true} />
+      <ItemsCollection results={topRatedTv} title='Top Rated TV' isTv={true} />
     </div>
   )
 }

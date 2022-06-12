@@ -1,4 +1,3 @@
-import React from 'react'
 import HeroCarousel from '../../components/hero-carousel'
 import ItemsCollection from '../../components/items-collections'
 import { moviesEndpoint } from '../../service'
@@ -13,10 +12,18 @@ export default function Movie({
     <div>
       <HeroCarousel popular={moviesPopular} />
       {/* Movies Collection */}
-      <ItemsCollection results={moviesPlaying} title='Now Playing' />
-      <ItemsCollection results={moviesPopular} title='Popular' />
-      <ItemsCollection results={moviesUpcoming} title='Upcoming' />
-      <ItemsCollection results={topRatedMovies} title='Top Rated' />
+      <ItemsCollection
+        results={moviesPlaying}
+        title='Now Playing'
+        isTv={false}
+      />
+      <ItemsCollection results={moviesPopular} title='Popular' isTv={false} />
+      <ItemsCollection results={moviesUpcoming} title='Upcoming' isTv={false} />
+      <ItemsCollection
+        results={topRatedMovies}
+        title='Top Rated'
+        isTv={false}
+      />
     </div>
   )
 }

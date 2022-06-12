@@ -8,7 +8,11 @@ export default function PlayerHead({ movie, videos }) {
         <div className='masthead-video'>
           <div className='video-container player-wrapper'>
             <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${vidUrl.key}`}
+              url={
+                videos.length > 1
+                  ? `https://www.youtube.com/watch?v=${vidUrl.key}`
+                  : 'https://www.youtube.com/watch?v=yL4KffCLgr8'
+              }
               width='100%'
               height='100%'
               className='react-player'

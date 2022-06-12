@@ -3,10 +3,10 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import ItemCard from '../item-card'
 
 export default function ItemsCollection(props) {
-  const { results, title } = props
+  const { results, title, isTv } = props
   const titleSlug = title.toLowerCase().replaceAll(' ', '-')
   const url = titleSlug.replace('-tv', '')
-
+  console.log(isTv)
   return (
     <div className='section mb-3'>
       <div className='section-head'>
@@ -23,7 +23,7 @@ export default function ItemsCollection(props) {
         <Swiper grabCursor={true} spaceBetween={10} slidesPerView={'auto'}>
           {results.map((item, i) => (
             <SwiperSlide key={i}>
-              <ItemCard item={item} title={title} />
+              <ItemCard item={item} title={title} isTv={isTv} />
             </SwiperSlide>
           ))}
         </Swiper>

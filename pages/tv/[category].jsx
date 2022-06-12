@@ -24,7 +24,7 @@ function category(props) {
       <div className='section'>
         <div className='item-grid'>
           {items.map((item, i) => (
-            <ItemCard key={i} item={item} />
+            <ItemCard key={i} item={item} isTv={true} />
           ))}
         </div>
         <ReactPaginate

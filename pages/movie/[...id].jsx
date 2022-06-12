@@ -11,7 +11,7 @@ export default function index(props) {
     <>
       <Head>
         <title>
-          Nonton - {movie.name} - Watch TV Shows, Movies, Live Cricket Matches
+          Nonton - {movie.title} - Watch TV Shows, Movies, Live Cricket Matches
           &amp; News Online
         </title>
         <meta
@@ -21,20 +21,20 @@ export default function index(props) {
         />
         <meta
           name='keywords'
-          content={`${movie.name}, online tv show, movies online, tv series, bollywood movies`}
+          content={`${movie.title}, online tv show, movies online, tv series, bollywood movies`}
         />
         <meta
           name='og:title'
-          content={`Nonton - ${movie.name} - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online`}
+          content={`Nonton - ${movie.title} - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online`}
         />
         <meta
           name='twitter:title'
-          content={`Nonton - ${movie.name} - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online`}
+          content={`Nonton - ${movie.title} - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online`}
         />
 
         <meta
           name='og:keywords'
-          content={`${movie.name}, online tv show, movies online, tv series, bollywood movies`}
+          content={`${movie.title}, online tv show, movies online, tv series, bollywood movies`}
         />
 
         <meta
@@ -43,12 +43,16 @@ export default function index(props) {
           content={movie.overview}
         />
       </Head>
-      <PlayerHead movie={movie} videos={videos} />
+      <PlayerHead movie={movie} videos={videos} isTv={false} />
 
-      <MoviesInfo movie={movie} credits={credits} />
+      <MoviesInfo movie={movie} credits={credits} isTv={false} />
 
-      <ItemsCollection results={similar} title='Similar' />
-      <ItemsCollection results={recommendations} title='Recommendations' />
+      <ItemsCollection results={similar} title='Similar' isTv={false} />
+      <ItemsCollection
+        results={recommendations}
+        title='Recommendations'
+        isTv={false}
+      />
     </>
   )
 }

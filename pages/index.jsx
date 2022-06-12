@@ -16,16 +16,24 @@ export default function Home({
     <div>
       <HeroCarousel popular={moviesPopular} />
       {/* Movies Collection */}
-      <ItemsCollection results={moviesPlaying} title='Now Playing' />
-      <ItemsCollection results={moviesPopular} title='Popular' />
-      <ItemsCollection results={moviesUpcoming} title='Upcoming' />
-      <ItemsCollection results={topRatedMovies} title='Top Rated' />
+      <ItemsCollection
+        results={moviesPlaying}
+        title='Now Playing'
+        isTv={false}
+      />
+      <ItemsCollection results={moviesPopular} title='Popular' isTv={false} />
+      <ItemsCollection results={moviesUpcoming} title='Upcoming' isTv={false} />
+      <ItemsCollection
+        results={topRatedMovies}
+        title='Top Rated'
+        isTv={false}
+      />
 
       {/* TV/Series Collection */}
-      <ItemsCollection results={tvAiring} title='Airing Today TV' />
-      <ItemsCollection results={tvOnTheAir} title='On The Air TV' />
-      <ItemsCollection results={tvPopular} title='Popular TV' />
-      <ItemsCollection results={topRatedTv} title='Top Rated TV' />
+      <ItemsCollection results={tvAiring} title='Airing Today TV' isTv={true} />
+      <ItemsCollection results={tvOnTheAir} title='On The Air TV' isTv={true} />
+      <ItemsCollection results={tvPopular} title='Popular TV' isTv={true} />
+      <ItemsCollection results={topRatedTv} title='Top Rated TV' isTv={true} />
     </div>
   )
 }
