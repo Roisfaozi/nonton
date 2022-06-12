@@ -4,7 +4,6 @@ import slugify from 'slugify'
 
 export default function ItemCard({ item, title }) {
   const [isShown, setShown] = useState(false)
-  console.log(slugify(`${item.title || item.name}`, { lower: true }))
   return (
     <div className='item-card'>
       <div

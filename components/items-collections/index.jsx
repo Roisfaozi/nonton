@@ -6,7 +6,6 @@ export default function ItemsCollection(props) {
   const { results, title } = props
   const titleSlug = title.toLowerCase().replaceAll(' ', '-')
   const url = titleSlug.replace('-tv', '')
-  console.log(results)
 
   return (
     <div className='section mb-3'>

@@ -24,7 +24,11 @@ export default function MoviesInfo({ movie, credits }) {
           </svg>
           <span className='ml-1'>{movie.vote_average}</span>
           <span className='mx-2'>|</span>
-          <span>{movie.release_date.slice(0, 4)}</span>
+          <span>
+            {movie.first_air_date
+              ? movie.first_air_date.slice(0, 4)
+              : movie.release_date.slice(0, 4)}
+          </span>
           <span className='mx-2'>|</span>
           <span>{movie.runtime} minutes.</span>
           {movie.genres &&
