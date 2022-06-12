@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import ItemsCollection from '../../components/items-collections'
 import MoviesInfo from '../../components/movies-info'
 import PlayerHead from '../../components/player-head'
@@ -8,6 +9,40 @@ export default function index(props) {
 
   return (
     <>
+      <Head>
+        <title>
+          Nonton - {movie.name} - Watch TV Shows, Movies, Live Cricket Matches
+          &amp; News Online
+        </title>
+        <meta
+          name='description'
+          itemProp='description'
+          content={movie.overview}
+        />
+        <meta
+          name='keywords'
+          content={`${movie.name}, online tv show, movies online, tv series, bollywood movies`}
+        />
+        <meta
+          name='og:title'
+          content={`Nonton - ${movie.name} - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online`}
+        />
+        <meta
+          name='twitter:title'
+          content={`Nonton - ${movie.name} - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online`}
+        />
+
+        <meta
+          name='og:keywords'
+          content={`${movie.name}, online tv show, movies online, tv series, bollywood movies`}
+        />
+
+        <meta
+          name='og:description'
+          itemProp='description'
+          content={movie.overview}
+        />
+      </Head>
       <PlayerHead movie={movie} videos={videos} />
 
       <MoviesInfo movie={movie} credits={credits} />

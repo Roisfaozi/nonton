@@ -22,39 +22,39 @@ function MyApp({ Component, pageProps }) {
         <meta
           name='description'
           itemProp='description'
-          content='Watch latest Star TV shows, movies, original series and live cricket on Hotstar - India’s premium video streaming service with more than 85,000 hours of drama and movies in 8 languages.'
+          content='Watch latest Star TV shows, movies, original series and live cricket on Nonton - hollywood premium video streaming service with more than 85,000 hours of drama and movies in 8 languages.'
         />
         <meta
           name='keywords'
-          content='online tv show, movies online, indian tv serial, bollywood movies'
+          content='online tv show, movies online, hollywood tv series, bollywood movies'
         />
         <meta
           property='og:title'
-          content='Hotstar - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online'
+          content='Nonton - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online'
         />
-        <meta property='og:image' content='/images/Disney+Hotstar.jpg' />
+        <meta property='og:image' content='/images/Disney+Nonton.jpg' />
         <meta
           name='og:description'
           itemProp='description'
-          content='Watch latest Star TV shows, movies, original series and live cricket on Hotstar - India’s premium video streaming service with more than 85,000 hours of drama and movies in 8 languages.'
+          content='Watch latest Star TV shows, movies, original series and live cricket on Nonton - hollywood premium video streaming service with more than 85,000 hours of drama and movies in 8 languages.'
         />
         <meta
           name='og:keywords'
-          content='online tv show, movies online, indian tv serial, bollywood movies'
+          content='online tv show, movies online, tv series, bollywood movies'
         />
         <meta name='twitter:card' content='photo' />
         <meta
           name='twitter:title'
-          content='Hotstar - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online'
+          content='Nonton - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online'
         />
-        <meta property='twitter:image' content='/images/Disney+Hotstar.jpg' />
+        <meta property='twitter:image' content='/images/Disney+Nonton.jpg' />
 
         {/* ms icon */}
         <meta name='msapplication-TileColor' content='#172D6D' />
         <meta name='msapplication-TileImage' content='/ms-icon-142x142.png' />
         <meta name='theme-color' content='#192133' />
         <title>
-          Hotstar - Watch TV Shows, Movies, Live Cricket Matches &amp; News
+          Nonton - Watch TV Shows, Movies, Live Cricket Matches &amp; News
           Online
         </title>
 
