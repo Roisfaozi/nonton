@@ -1,17 +1,17 @@
 import ReactPlayer from 'react-player'
 
 export default function PlayerHead({ movie, videos }) {
-  console.log(videos)
   const vidUrl = videos.find((video) => video.type === 'Trailer')
-  console.log(vidUrl)
   return (
     <div className='masthead-container'>
       <div className='masthead-card'>
         <div className='masthead-video'>
-          <div className='video-container'>
+          <div className='video-container player-wrapper'>
             <ReactPlayer
               url={`https://www.youtube.com/watch?v=${vidUrl.key}`}
               width='100%'
+              height='100%'
+              className='react-player'
               playing
               playIcon={
                 <svg

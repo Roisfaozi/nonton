@@ -1,4 +1,5 @@
-export default function MoviesInfo({ movie }) {
+export default function MoviesInfo({ movie, credits }) {
+  const casts = credits.cast.slice(0, 6)
   return (
     <div className='movie-content container'>
       <div className='movie-content-poster'>
@@ -39,11 +40,16 @@ export default function MoviesInfo({ movie }) {
         </div>
 
         <p className='overview'>{movie.overview}</p>
-        <div className='cast'>
-          <div className='section-header'>
-            <h2>Casts</h2>
-          </div>
-        </div>
+        <ul className='cast'>
+          <li>
+            Casts:
+            {casts.map((cast, i) => (
+              <>
+                <span>{cast.name}</span>
+              </>
+            ))}
+          </li>
+        </ul>
       </div>
     </div>
   )

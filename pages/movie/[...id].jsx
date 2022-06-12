@@ -1,14 +1,20 @@
+import ItemsCollection from '../../components/items-collections'
 import MoviesInfo from '../../components/movies-info'
 import PlayerHead from '../../components/player-head'
 import { moviesEndpoint } from '../../service'
 
-export default function index({ movie, credits, videos }) {
+export default function index(props) {
+  const { movie, credits, videos, similar, recommendations } = props
+
   return (
-    <div>
+    <>
       <PlayerHead movie={movie} videos={videos} />
 
-      <MoviesInfo movie={movie} />
-    </div>
+      <MoviesInfo movie={movie} credits={credits} />
+
+      <ItemsCollection results={similar} title='Similar' />
+      <ItemsCollection results={recommendations} title='Recommendations' />
+    </>
   )
 }
 
@@ -25,6 +31,8 @@ export async function getServerSideProps({ query }) {
       movie: movie,
       credits: movie.credits,
       videos: movie.videos.results,
+      similar: movie.similar.results,
+      recommendations: movie.recommendations.results,
     },
   }
 }

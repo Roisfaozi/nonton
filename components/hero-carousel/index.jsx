@@ -55,7 +55,9 @@ const HeroContent = (props) => {
         <Link
           key={item.id}
           href='/movie/[...id]'
-          as={`/movie/${item.id}/${slugify(`${item.title}`, { lower: true })}`}>
+          as={`/movie/${item.id}/${slugify(`${item.title || item.name}`, {
+            lower: true,
+          })}`}>
           <a title={item.title || item.name} className='streched-link'></a>
         </Link>
         <div className='hero-slide-item-content-info'>
