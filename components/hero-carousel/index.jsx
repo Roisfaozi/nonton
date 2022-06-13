@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import SwiperCore, { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import HeroContent from '../hero-content'
@@ -5,7 +6,6 @@ import HeroContent from '../hero-content'
 export default function HeroCarousel(props) {
   const { popular, isTv } = props
   SwiperCore.use([Autoplay])
-  console.log(props)
 
   const popularShows = popular.slice(0, 6)
 
@@ -36,4 +36,8 @@ export default function HeroCarousel(props) {
       </Swiper>
     </div>
   )
+}
+
+HeroContent.propTypes = {
+  isTv: PropTypes.bool.isRequired,
 }

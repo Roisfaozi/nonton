@@ -14,7 +14,7 @@ export default function Home({
 }) {
   return (
     <div>
-      <HeroCarousel popular={moviesPopular} />
+      <HeroCarousel popular={moviesPopular} isTv={false} />
       <ItemsCollection
         results={moviesPlaying}
         title='Now Playing'

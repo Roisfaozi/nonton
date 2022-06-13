@@ -1,3 +1,7 @@
+import Link from 'next/link'
+import PropTypes from 'prop-types'
+import slugify from 'slugify'
+
 export default function HeroContent(props) {
   const { item, isTv } = props
   const background = `https://image.tmdb.org/t/p/original/${
@@ -64,4 +68,8 @@ export default function HeroContent(props) {
       </div>
     </div>
   )
+}
+
+HeroContent.propTypes = {
+  isTv: PropTypes.bool.isRequired,
 }
