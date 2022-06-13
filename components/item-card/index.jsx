@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import slugify from 'slugify'
 
-export default function ItemCard({ item, title, isTv }) {
+export default function ItemCard({ item, isTv }) {
   const [isShown, setShown] = useState(false)
   return (
     <div className='item-card'>

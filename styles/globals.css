@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
 
 * {
@@ -21,7 +23,7 @@ a {
 }
 
 .btn {
-  @apply cursor-pointer border bg-[#ffffff40] text-white rounded-xl border-solid border-white/[0.18] backdrop-blur-lg py-1 px-5 text-lg font-medium relative transition-all duration-300 ease-in shadow-lg outline-none;
+  @apply cursor-pointer border bg-white/25 text-white rounded-xl border-solid border-white/20 backdrop-blur-lg py-1 px-5 text-lg font-medium relative transition-all duration-300 ease-in shadow-lg outline-none;
 }
 
 .section {
@@ -38,20 +40,18 @@ a {
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.28);
 }
 
-/*  START Header */
-
 .hero-carousel {
   @apply mb-8;
 }
 .logo {
-  @apply text-3xl font-semibold flex items-center;
+  @apply text-2xl font-semibold flex items-center;
 }
 .logo img {
   @apply sm:mr-2.5 w-7.8 sm:w-12 mr-0;
 }
 
 .header {
-  @apply h-28 fixed top-0 left-0 w-full z-99 transition-all ease-in duration-300;
+  @apply flex items-center h-20 fixed top-0 left-0 w-full z-99 transition-all ease-in duration-300;
 }
 
 .header.shrink {
@@ -70,19 +70,15 @@ a {
   @apply sm:ml-8 ml-0;
 }
 .header_nav li {
-  @apply py-1 px-0 font-bold relative text-sm sm:text-2xl after:absolute after:bottom-0 after:left-1/2 after:w-0 after:-translate-x-1/2 after:transition-width after:duration-300 after:ease-in after:h-0.5 after:bg-red-600 hover:after:w-full;
+  @apply py-1 px-0 font-bold relative text-sm sm:text-xl after:absolute after:bottom-0 after:left-1/2 after:w-0 after:-translate-x-1/2 after:transition-width after:duration-300 after:ease-in after:h-0.5 after:bg-red-600 hover:after:w-full;
 }
 
 .header_nav li.active {
   @apply after:w-full;
 }
 
-/*  END Header */
-
-/*  START Hero */
-
 .hero-slide-item {
-  @apply py-28 w-full relative bg-center bg-cover bg-no-repeat before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-zinc-905 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[100px] after:bg-hero-gradient;
+  @apply py-28 w-full relative bg-center bg-cover bg-no-repeat before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-zinc-905 after:content-blank after:absolute after:bottom-0 after:left-0 after:w-full after:h-100px after:bg-hero-gradient;
 }
 
 .hero-slide-item-content {
@@ -104,8 +100,8 @@ a {
 }
 
 .hero-slide-item-content-info .overview {
-  @apply font-semibold lg:text-sm md:text-[80%]
-text-[60%];
+  @apply font-semibold lg:text-sm md:text-8/10
+text-6/10 tracking-wider sm:leading-3;
 }
 .hero-slide-item-content-info .btns > * ~ * {
   @apply ml-4;
@@ -114,14 +110,14 @@ text-[60%];
 .hero-slide-item-content-info .overview,
 .hero-slide-item-content-info .btns,
 .hero-slide-item-content-info .title {
-  @apply opacity-0 translate-y-[-100px] transition-double duration-double ease-double;
+  @apply opacity-0 -translate-y-100px transition-double duration-double ease-double;
 }
 
 .hero-slide-item-content-poster {
   @apply lg:flex-auto lg:flex lg:items-center lg:justify-evenly lg:relative hidden;
 }
 .hero-slide-item-content-poster img {
-  @apply w-[35%] rounded-3xl shadow-poster scale-0 transition-transform duration-700;
+  @apply w-3.5/10 rounded-3xl shadow-poster scale-0 transition-transform duration-700;
 }
 
 .hero-slide-item.active
@@ -167,9 +163,6 @@ text-[60%];
   .btns {
   @apply delay-900;
 }
-/*  END Hero */
-
-/*  START Item Components */
 
 .section-head h2 {
   @apply text-2xl font-bold tracking-wider;
@@ -203,11 +196,11 @@ text-[60%];
 }
 
 .des {
-  @apply text-white opacity-80 my-1.5 font-medium text-[10px];
+  @apply text-white opacity-80 my-1.5 font-medium text-lt;
 }
 
 .watchlist-btn {
-  @apply relative w-full capitalize bg-none border-none font-medium text-right text-[9px] text-white/50 my-[2px] cursor-pointer p-1 rounded;
+  @apply relative w-full capitalize bg-none border-none font-medium text-right text-lt text-white/50 my-2px cursor-pointer p-1 rounded;
 }
 
 .watchlist-btn:hover {
@@ -215,17 +208,9 @@ text-[60%];
   color: #fff;
 }
 
-/*  END Item Components */
-
-/* START Item grid */
-
 .item-grid {
   @apply grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 gap-4;
 }
-
-/* END Item grid */
-
-/* START Pagination */
 
 .pagination {
   @apply flex items-center list-none h-10 border border-solid border-slate-700  rounded-md w-fit mt-10 mx-auto;
@@ -237,19 +222,13 @@ text-[60%];
 .pagination li.active {
   @apply font-bold no-underline text-red-600;
 }
-/* END Pagination */
 
-/* START Title page */
 .title-page {
   @apply text-center mb-8 relative;
 }
 .title-page h2 {
   @apply capitalize relative z-99 font-semibold text-2xl tracking-wider;
 }
-
-/* END Title page */
-
-/* START Footer */
 
 footer {
   @apply bg-slate-800 text-center lg:text-left;
@@ -261,9 +240,6 @@ footer {
 .footer-container a {
   @apply text-gray-300;
 }
-/* END Footer */
-
-/* START Details */
 
 .masthead-container {
   @apply pt-20 relative h-auto w-full;
@@ -277,11 +253,15 @@ footer {
 }
 
 .video-container {
-  @apply sm:h-auto h-full w-full md:min-h-[460px] min-h-[400px] m-auto  lg:w-[calc(100%-105px)];
+  @apply sm:h-auto h-full w-full md:min-h-460px min-h-400px m-auto  lg:w-percent;
 }
 
 .player-wrapper {
   @apply relative w-auto h-auto;
+}
+
+.player-svg {
+  @apply w-60px sm:w-70px h-full;
 }
 
 .react-player {
@@ -327,4 +307,3 @@ footer {
 .cast li span {
   @apply font-normal text-base tracking-wider ml-4;
 }
-/* END Details */

@@ -15,7 +15,6 @@ export default function Home({
   return (
     <div>
       <HeroCarousel popular={moviesPopular} />
-      {/* Movies Collection */}
       <ItemsCollection
         results={moviesPlaying}
         title='Now Playing'
@@ -29,7 +28,6 @@ export default function Home({
         isTv={false}
       />
 
-      {/* TV/Series Collection */}
       <ItemsCollection results={tvAiring} title='Airing Today TV' isTv={true} />
       <ItemsCollection results={tvOnTheAir} title='On The Air TV' isTv={true} />
       <ItemsCollection results={tvPopular} title='Popular TV' isTv={true} />

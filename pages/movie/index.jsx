@@ -10,8 +10,7 @@ export default function Movie({
 }) {
   return (
     <div>
-      <HeroCarousel popular={moviesPopular} />
-      {/* Movies Collection */}
+      <HeroCarousel popular={moviesPopular} isTv={false} />
       <ItemsCollection
         results={moviesPlaying}
         title='Now Playing'

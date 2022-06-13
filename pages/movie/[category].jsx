@@ -19,7 +19,7 @@ function category(props) {
   }
   return (
     <>
-      <HeroCarousel popular={movies} />
+      <HeroCarousel popular={movies} isTv={false} />
       <TitlePage category={category} />
       <div className='section'>
         <div className='item-grid'>
@@ -47,7 +47,6 @@ function category(props) {
 }
 
 export async function getServerSideProps({ query }) {
-  // Fetch data from external API
   const page = query.page || 1
   const category = query.category.replace('-', '_')
   const data = await moviesEndpoint.getMovies(category, {

@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
           name='viewport'
           content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
         />
-        {/* meta description */}
+
         <meta
           name='description'
           itemProp='description'
@@ -49,7 +49,6 @@ function MyApp({ Component, pageProps }) {
         />
         <meta property='twitter:image' content='/images/Disney+Nonton.jpg' />
 
-        {/* ms icon */}
         <meta name='msapplication-TileColor' content='#172D6D' />
         <meta name='msapplication-TileImage' content='/ms-icon-142x142.png' />
         <meta name='theme-color' content='#192133' />
@@ -61,7 +60,6 @@ function MyApp({ Component, pageProps }) {
         <link rel='manifest' href='/manifest.json' />
         <link rel='shortcut icon' href='/favicon.ico' />
 
-        {/* apple icon */}
         <link
           rel='apple-touch-icon'
           sizes='57x57'
@@ -108,7 +106,6 @@ function MyApp({ Component, pageProps }) {
           href='/icons/apple-icon-180x180.png'
         />
 
-        {/* favicon */}
         <link
           rel='icon'
           type='image/png'

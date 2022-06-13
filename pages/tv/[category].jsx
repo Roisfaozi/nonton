@@ -19,7 +19,8 @@ function category(props) {
   }
   return (
     <>
-      <HeroCarousel popular={items} />
+      <HeroCarousel popular={items} isTv={false} />
+
       <TitlePage category={category} />
       <div className='section'>
         <div className='item-grid'>
@@ -47,7 +48,6 @@ function category(props) {
 }
 
 export async function getServerSideProps({ query }) {
-  // Fetch data from external API
   const page = query.page || 1
   const category = query.category.replaceAll('-', '_')
   const data = await tvEndpoint.getTV(category, {

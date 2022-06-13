@@ -1,6 +1,5 @@
 import axios from './axios'
 
-// Movies Endpoint
 export const moviesEndpoint = {
   getMovies: (category, params) => {
     const url = `movie/${category}`
@@ -36,7 +35,6 @@ export const moviesEndpoint = {
   },
 }
 
-// TV Endpoint
 export const tvEndpoint = {
   getTV: (category, params) => {
     const url = `tv/${category}`

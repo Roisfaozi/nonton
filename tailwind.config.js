@@ -4,7 +4,7 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'media',
   theme: {
     screens: {
       sm: '640px',
@@ -12,7 +12,6 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
       '2xl': '1536px',
-      'hover-hover': { raw: '(hover: hover)' },
     },
     colors: ({ colors }) => ({
       inherit: colors.inherit,
@@ -108,6 +107,9 @@ module.exports = {
       72: '18rem',
       80: '20rem',
       96: '24rem',
+      '70px': '70px',
+      '60px': '60px',
+      '100px': '100px',
     },
     animation: {
       none: 'none',
@@ -246,6 +248,7 @@ module.exports = {
     container: {},
     content: {
       none: 'none',
+      blank: '',
     },
     cursor: {
       auto: 'auto',
@@ -396,6 +399,7 @@ module.exports = {
       ],
     },
     fontSize: {
+      lt: ['10px', { lineHeight: '1rem' }],
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.25rem' }],
       base: ['1rem', { lineHeight: '1.5rem' }],
@@ -409,6 +413,8 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+      '8/10': ['80%', { lineHeight: '1' }],
+      '6/10': ['60%', { lineHeight: '1' }],
     },
     fontWeight: {
       thin: '100',
@@ -632,6 +638,7 @@ module.exports = {
     margin: ({ theme }) => ({
       auto: 'auto',
       ...theme('spacing'),
+      '2px': '2px',
     }),
     maxHeight: ({ theme }) => ({
       ...theme('spacing'),
@@ -669,6 +676,8 @@ module.exports = {
       min: 'min-content',
       max: 'max-content',
       fit: 'fit-content',
+      '460px': '460px',
+      '400px': '400px',
     },
     minWidth: {
       0: '0px',
@@ -937,6 +946,8 @@ module.exports = {
       '9/12': '75%',
       '10/12': '83.333333%',
       '11/12': '91.666667%',
+      '3.5/10': '35%',
+      percent: 'calc(100%-105px)',
       55: '55%',
       full: '100%',
       screen: '100vw',
