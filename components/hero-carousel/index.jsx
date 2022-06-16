@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types'
-import SwiperCore, { Autoplay } from 'swiper'
+import { Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import HeroContent from '../hero-content'
 
 export default function HeroCarousel(props) {
   const { popular, isTv } = props
-  SwiperCore.use([Autoplay])
 
   const popularShows = popular.slice(0, 6)
 

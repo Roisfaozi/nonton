@@ -110,7 +110,37 @@ function MyApp({ Component, pageProps }) {
           rel='icon'
           type='image/png'
           sizes='192x192'
-          href='/icons/android-icon-192x192.png'
+          href='/icons/android-icon-192-192.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='icons/android-icon-512-512.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='icons/android-icon-48-48.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='icons/android-icon-72-72.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='icons/android-icon-144-144.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='icons/android-icon-96-96.png'
         />
         <link
           rel='icon'

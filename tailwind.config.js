@@ -228,7 +228,7 @@ module.exports = {
       '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
       inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
       none: 'none',
-      poster: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',
+      poster: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px',
     },
     boxShadowColor: ({ theme }) => theme('colors'),
     caretColor: ({ theme }) => theme('colors'),
