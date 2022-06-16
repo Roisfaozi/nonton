@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import slugify from 'slugify'
@@ -10,13 +11,26 @@ export default function ItemCard({ item, isTv }) {
         className='card'
         onMouseEnter={() => setShown(true)}
         onMouseLeave={() => setShown(false)}>
-        <img
+        <Image
+          src={`https://image.tmdb.org/t/p/w500/${
+            item.poster_path || item.backdrop_path
+          }`}
+          alt={item.title || item.name}
+          layout='responsive'
+          loading='eager'
+          width={197}
+          height={295}
+          className='card-img'
+          objectFit='cover'
+          priority={true}
+        />
+        {/* <img
           src={`https://image.tmdb.org/t/p/w500/${
             item.poster_path || item.backdrop_path
           }`}
           alt={item.title}
           className='card-img'
-        />
+        /> */}
         <Link
           key={item.id}
           href={isTv ? `/tv/[...id]` : `/movie/[...id]`}

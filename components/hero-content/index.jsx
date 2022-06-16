@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import slugify from 'slugify'
@@ -11,12 +12,22 @@ export default function HeroContent(props) {
     <div
       className={`hero-slide-item ${props.className}`}
       style={{ backgroundImage: `url(${background})` }}>
-      <div className='hero-slide-item-content container'>
-        <div className='hero-slide-item-content-poster'>
-          <img
+      <div className='hero-slide-item-content container '>
+        <div className='hero-slide-item-content-poster  '>
+          <Image
             src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
             alt={item.title || item.name}
+            width={197}
+            height={295}
+            className='image-poster'
+            priority={true}
+            objectFit='cover'
           />
+          {/* <img
+            className='image-poster'
+            src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`}
+            alt={item.title || item.name}
+          /> */}
         </div>
         <Link
           key={item.id}

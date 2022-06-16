@@ -1,14 +1,20 @@
+import Image from 'next/image'
+
 export default function MoviesInfo({ movie, credits }) {
   const casts = credits.cast.slice(0, 6)
   return (
     <div className='movie-content container'>
       <div className='movie-content-poster'>
-        <img
-          className='movie-content-poster-img'
+        <Image
           src={`https://image.tmdb.org/t/p/original/${
             movie.poster_path ? movie.poster_path : movie.backdrop_path
           }`}
-          alt={movie.title}
+          alt={movie.title || movie.name}
+          width={304}
+          height={456}
+          className='movie-content-poster-img'
+          priority={true}
+          objectFit='cover'
         />
       </div>
       <div className='movie-content-info'>

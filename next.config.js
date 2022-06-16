@@ -1,27 +1,17 @@
 const withPWA = require('next-pwa')
 const runtimeCaching = require('next-pwa/cache')
-module.exports = withPWA(
-  {
-    pwa: {
-      dest: 'public',
-      skipWaiting: true,
-      disable: process.env.NODE_ENV === 'development',
-      runtimeCaching,
-      dynamicStartUrl: false,
-    },
-    reactStrictMode: true,
+module.exports = withPWA({
+  images: {
+    domains: ['image.tmdb.org'],
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
-  {
-    webpack: (config, { isServer }) => {
-      if (isServer) {
-        require('./scripts/generate-sitemap')
-      }
-
-      return config
-    },
-    images: {
-      domains: ['image.tmdb.orgs'],
-      formats: ['image/avif', 'image/webp'],
-    },
-  }
-)
+  pwa: {
+    dest: 'public',
+    skipWaiting: true,
+    disable: process.env.NODE_ENV === 'development',
+    runtimeCaching,
+    dynamicStartUrl: false,
+  },
+  reactStrictMode: true,
+})

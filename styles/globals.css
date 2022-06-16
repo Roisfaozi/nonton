@@ -116,14 +116,14 @@ text-6/10 tracking-wider sm:leading-3;
 .hero-slide-item-content-poster {
   @apply lg:flex-auto lg:flex lg:items-center lg:justify-evenly lg:relative hidden;
 }
-.hero-slide-item-content-poster img {
+.image-poster {
   @apply w-3.5/10 rounded-3xl shadow-poster scale-0 transition-transform duration-700;
 }
 
 .hero-slide-item.active
   > .hero-slide-item-content
   > .hero-slide-item-content-poster
-  img {
+  .image-poster {
   @apply scale-100;
 }
 
@@ -290,6 +290,10 @@ footer {
   @apply lg:text-5xl md:text-4xl text-3xl;
 }
 
+.movie-content-info .overview {
+  @apply lg:text-lg text-sm;
+}
+
 .detail {
   @apply flex flex-wrap items-center text-gray-300 text-base my-4;
 }
@@ -302,8 +306,8 @@ footer {
 }
 
 .cast li {
-  @apply font-medium text-lg tracking-wider;
+  @apply font-medium lg:text-lg text-base tracking-wider;
 }
 .cast li span {
-  @apply font-normal text-base tracking-wider ml-4;
+  @apply font-normal lg:text-base text-xs tracking-wider ml-4;
 }
