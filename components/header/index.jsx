@@ -46,18 +46,22 @@ function Header({ router }) {
       <div ref={headerRef} className='header'>
         <div className='header_wrap container'>
           <div className='logo'>
-            <Image
-              src={logo.src}
-              alt='Nonton'
-              loading='eager'
-              layout='responsive'
-              width={68}
-              height={68}
-              sizes={15}
-              className='logo-img'
-              objectFit='cover'
-              priority={true}
-            />
+            <div className='block'>
+              <Image
+                src={logo.src}
+                alt='Nonton'
+                loading='eager'
+                layout='responsive'
+                width={20}
+                height={20}
+                sizes={15}
+                className='logo-img'
+                objectFit='cover'
+                priority={true}
+              />
+            </div>
+
+            {/* <img src={logo.src} alt='' /> */}
             <Link href='/' prefetch={false}>
               <a>Nonton</a>
             </Link>
