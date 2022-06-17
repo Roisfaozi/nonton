@@ -5,7 +5,7 @@ export const getServerSideProps = async (ctx) => {
   const url = process.env.NEXT_PUBLIC_BASE_URL
   let movies = []
   let tv = []
-  let page = [...Array(5).keys()]
+  let page = [...Array(500).keys()]
   await Promise.all(
     page.map(async (page) => {
       await axios
