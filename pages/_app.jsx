@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
+import { useEffect, useState } from 'react'
 import 'swiper/css'
 import 'tailwindcss/tailwind.css'
 import Footer from '../components/footer'
@@ -7,6 +8,12 @@ import Header from '../components/header'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
+  const [pageURL, setPageURL] = useState(0)
+
+  useEffect(() => {
+    setPageURL(window.location.origin)
+  })
+
   return (
     <>
       <Head>
@@ -16,8 +23,9 @@ function MyApp({ Component, pageProps }) {
         <meta name='mobile-web-app-capable' content='yes' />
         <meta
           name='viewport'
-          content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'
+          content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5'
         />
+        <link rel='canonical' href={`${pageURL}`} />
 
         <meta
           name='description'

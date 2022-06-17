@@ -2,15 +2,17 @@ import Image from 'next/image'
 
 export default function MoviesInfo({ movie, credits }) {
   const casts = credits.cast.slice(0, 6)
+  const image = `https://image.tmdb.org/t/p/original/${
+    movie.poster_path ? movie.poster_path : movie.backdrop_path
+  }`
   return (
     <div className='movie-content container'>
       <div className='movie-content-poster'>
         <Image
-          src={`https://image.tmdb.org/t/p/original/${
-            movie.poster_path ? movie.poster_path : movie.backdrop_path
-          }`}
+          src={`${image}`}
           alt={movie.title || movie.name}
           width={304}
+          sizes={15}
           height={456}
           className='movie-content-poster-img'
           priority={true}
@@ -55,7 +57,7 @@ export default function MoviesInfo({ movie, credits }) {
             Casts:
             {casts.map((cast, i) => (
               <>
-                <span>{cast.name}</span>
+                <span key={i}>{cast.name}</span>
               </>
             ))}
           </li>

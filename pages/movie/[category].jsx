@@ -1,10 +1,15 @@
+import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
 import ReactPaginate from 'react-paginate'
-import HeroCarousel from '../../components/hero-carousel'
-import ItemCard from '../../components/item-card'
+
 import TitlePage from '../../components/title-page'
 import { moviesEndpoint } from '../../service'
-
+const HeroCarousel = dynamic(() => import('../../components/hero-carousel'), {
+  ssr: true,
+})
+const ItemCard = dynamic(() => import('../../components/item-card'), {
+  ssr: true,
+})
 function category(props) {
   const { movies, category, totalPages, currentPage } = props
   const pagginationHandler = (page) => {

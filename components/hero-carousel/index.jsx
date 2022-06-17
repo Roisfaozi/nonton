@@ -16,10 +16,10 @@ export default function HeroCarousel(props) {
         spaceBetween={0}
         slidesPerView={1}
         touchEventsTarget='container'
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         className='mySwiper'>
         {popularShows.map((item, i) => (
           <SwiperSlide key={i}>

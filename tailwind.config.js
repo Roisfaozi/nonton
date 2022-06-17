@@ -9,6 +9,7 @@ module.exports = {
   darkMode: 'media',
   theme: {
     screens: {
+      xs: '420px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -415,8 +416,8 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
-      '8/10': ['80%', { lineHeight: '1' }],
-      '6/10': ['60%', { lineHeight: '1' }],
+      '7/10': ['70%', { lineHeight: '1' }],
+      '5/10': ['50%', { lineHeight: '1' }],
     },
     fontWeight: {
       thin: '100',

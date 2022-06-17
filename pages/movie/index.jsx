@@ -1,7 +1,14 @@
-import HeroCarousel from '../../components/hero-carousel'
-import ItemsCollection from '../../components/items-collections'
+import dynamic from 'next/dynamic'
 import { moviesEndpoint } from '../../service'
-
+const HeroCarousel = dynamic(() => import('../../components/hero-carousel'), {
+  ssr: true,
+})
+const ItemsCollection = dynamic(
+  () => import('../../components/items-collections'),
+  {
+    ssr: true,
+  }
+)
 export default function Movie({
   moviesPopular,
   moviesPlaying,

@@ -1,9 +1,16 @@
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import ItemsCollection from '../../components/items-collections'
-import MoviesInfo from '../../components/movies-info'
 import PlayerHead from '../../components/player-head'
 import { moviesEndpoint } from '../../service'
-
+const MoviesInfo = dynamic(() => import('../../components/movies-info'), {
+  ssr: true,
+})
+const ItemsCollection = dynamic(
+  () => import('../../components/items-collections'),
+  {
+    ssr: true,
+  }
+)
 export default function index(props) {
   const { movie, credits, videos, similar, recommendations } = props
 
