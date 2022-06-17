@@ -5,7 +5,7 @@ export const getServerSideProps = async (ctx) => {
   const url = process.env.NEXT_PUBLIC_BASE_URL
   let movies = []
   let tv = []
-  let page = [...Array(700).keys()]
+  let page = [...Array(5).keys()]
   await Promise.all(
     page.map(async (page) => {
       await axios
@@ -17,7 +17,14 @@ export const getServerSideProps = async (ctx) => {
         .then((res) => {
           const items = res.results
           for (let i = 0; i < items.length; i++) {
-            movies.push(items[i])
+            const chganedTitle = [
+              items[i].id,
+              items[i].title
+                .toLowerCase()
+                .replace(/[^\w ]/g, '')
+                .replaceAll(' ', '-'),
+            ]
+            movies.push(...chganedTitle)
           }
         })
       await axios
@@ -29,7 +36,14 @@ export const getServerSideProps = async (ctx) => {
         .then((res) => {
           const items = res.results
           for (let i = 0; i < items.length; i++) {
-            tv.push(items[i])
+            const chganedTitle = [
+              items[i].id,
+              items[i].name
+                .toLowerCase()
+                .replace(/[^\w ]/g, '')
+                .replaceAll(' ', '-'),
+            ]
+            tv.push(...chganedTitle)
           }
         })
     })

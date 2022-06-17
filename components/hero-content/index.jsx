@@ -42,9 +42,11 @@ export default function HeroContent(props) {
             isTv
               ? `/tv/${item.id}/${slugify(`${item.title || item.name}`, {
                   lower: true,
+                  remove: /[^\w ]/g,
                 })}`
               : `/movie/${item.id}/${slugify(`${item.title || item.name}`, {
                   lower: true,
+                  remove: /[^\w ]/g,
                 })}`
           }>
           <a title={item.title || item.name} className='streched-link'></a>
