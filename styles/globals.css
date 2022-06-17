@@ -104,7 +104,7 @@ text-[12px] tracking-wider sm:leading-3;
 }
 
 .btns a {
-  @apply cursor-pointer active:scale-95 inline-flex justify-center items-center gap-2 text-xs md:text-xl font-semibold xs:w-1/4 w-1/2 sm:w-1/5 md:w-1/5 p-1 xs:p-2 md:py-[12px] md:px-[25px] rounded-full bg-white text-black transition hover:opacity-[0.8];
+  @apply cursor-pointer active:scale-95 inline-flex justify-center items-center gap-2 text-xs md:text-xl font-semibold xs:w-1/4 w-1/2 sm:w-1/5 lg:w-1/4 md:w-[18%] p-1 xs:p-2 md:py-[12px] md:px-[25px] rounded-full bg-white text-black transition hover:opacity-[0.8];
 }
 
 .hero-slide-item-content-info .overview,
