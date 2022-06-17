@@ -35,22 +35,6 @@ export const getServerSideProps = async (ctx) => {
     })
   )
 
-  //   console.log(movies, 'lele')
-
-  //   const film = movies.map((movie) => ({
-  //     loc: `https://www.usmovie.com/movie/${movie.id}/${movie.title
-  //       .toLowerCase()
-  //       .replace(/[^\w ]/g, '')
-  //       .replaceAll(' ', '-')}`,
-  //     lastmod: new Date().toISOString(),
-  //   }))
-  //   const series = tv.map((tv) => ({
-  //     loc: `https://www.usmovie.com/tv/${tv.id}/${tv.name
-  //       .toLowerCase()
-  //       .replaceAll(' ', '-')}`,
-  //     lastmod: new Date().toISOString(),
-  //   }))
-
   return getServerSideSitemapIndex(ctx, [
     `${url}/server-sitemap-1.xml`,
     `${url}/server-sitemap-2.xml`,
