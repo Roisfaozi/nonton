@@ -19,13 +19,12 @@ export default function ItemCard({ item, isTv }) {
           src={`${image}`}
           alt={item.title || item.name}
           layout='responsive'
-          loading='eager'
+          loading='lazy'
           width={197}
           height={295}
           sizes={15}
           className='card-img'
           objectFit='cover'
-          priority={true}
         />
 
         <Link
@@ -47,9 +46,9 @@ export default function ItemCard({ item, isTv }) {
         {isShown && (
           <div className='card-body'>
             <h2 className='name'>{item.title || item.name}</h2>
-            <h6 className='des'>
+            <p className='des'>
               {item.overview ? item.overview.slice(0, 50) + '...' : ''}
-            </h6>
+            </p>
             <Link
               key={item.id}
               href={isTv ? `/tv/[...id]` : `/movie/[...id]`}

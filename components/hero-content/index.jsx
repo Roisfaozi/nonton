@@ -15,7 +15,6 @@ export default function HeroContent(props) {
         src={`${background}`}
         alt={item.title || item.name}
         layout='fill'
-        loading='eager'
         className='-z-10'
         objectFit='cover'
         objectPosition='center'
@@ -28,7 +27,6 @@ export default function HeroContent(props) {
             src={`${image}`}
             alt={item.title || item.name}
             width={197}
-            sizes={15}
             height={295}
             className='image-poster'
             priority={true}

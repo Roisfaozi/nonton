@@ -38,7 +38,7 @@ a {
   @apply mb-8;
 }
 .logo {
-  @apply text-2xl font-semibold flex items-center w-full;
+  @apply text-2xl font-semibold sm:grid sm:grid-cols-2 items-center flex w-1/6 md:w-[10%];
 }
 .logo .logo-img {
   @apply sm:mr-2.5 w-7.8 sm:w-12 mr-0;
