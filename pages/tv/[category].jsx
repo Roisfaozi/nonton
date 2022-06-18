@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 import { withRouter } from 'next/router'
+import { useState } from 'react'
 import ReactPaginate from 'react-paginate'
 import TitlePage from '../../components/title-page'
 import { tvEndpoint } from '../../service'
@@ -21,17 +22,24 @@ function category(props) {
       query: currentQuery,
     })
   }
+  const [itemJsx, setItemJsx] = useState('')
+  const showItemCard = () => {
+    const iJsx = []
+    items.map((item, i) => {
+      iJsx.push(<ItemCard key={i} item={item} isTv={false} />)
+    })
+    setItemJsx(iJsx)
+  }
+  if (!itemJsx && items.length) {
+    showItemCard()
+  }
   return (
     <>
       <HeroCarousel popular={items} isTv={false} />
 
       <TitlePage category={category} />
       <div className='section'>
-        <div className='item-grid'>
-          {items.map((item, i) => (
-            <ItemCard key={i} item={item} isTv={true} />
-          ))}
-        </div>
+        <div className='item-grid'>{itemJsx}</div>
         <ReactPaginate
           previousLabel={'previous'}
           nextLabel={'next'}

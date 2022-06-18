@@ -21,7 +21,7 @@ function category(props) {
     })
     setItemJsx(iJsx)
   }
-  if (!itemJsx && results.length) {
+  if (!itemJsx && movies.length) {
     showItemCard()
   }
   const pagginationHandler = (page) => {

@@ -96,7 +96,7 @@ a {
 }
 
 .hero-slide-item-content-info .overview {
-  @apply font-semibold lg:text-sm md:text-7/10
+  @apply sm:font-semibold font-normal lg:text-sm md:text-7/10
 text-[12px] tracking-wider sm:leading-3;
 }
 .hero-slide-item-content-info .btns > * ~ * {
@@ -196,7 +196,7 @@ text-[12px] tracking-wider sm:leading-3;
 }
 
 .des {
-  @apply text-white opacity-80 my-1.5 font-medium text-lt;
+  @apply text-white opacity-80 my-1.5 font-normal sm:font-medium text-lt;
 }
 
 .watchlist-btn {
