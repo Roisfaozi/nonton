@@ -50,18 +50,16 @@ function Header({ router }) {
               <Image
                 src={logo.src}
                 alt='Nonton'
-                loading='eager'
                 layout='responsive'
                 width={20}
                 height={20}
                 sizes={15}
                 className='logo-img'
                 objectFit='cover'
-                priority={true}
+                loading='lazy'
               />
             </div>
 
-            {/* <img src={logo.src} alt='' /> */}
             <Link href='/' prefetch={false}>
               <a>Nonton</a>
             </Link>

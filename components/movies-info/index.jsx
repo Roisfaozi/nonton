@@ -15,8 +15,8 @@ export default function MoviesInfo({ movie, credits }) {
           sizes={15}
           height={456}
           className='movie-content-poster-img'
-          priority={true}
           objectFit='cover'
+          loading='lazy'
         />
       </div>
       <div className='movie-content-info'>

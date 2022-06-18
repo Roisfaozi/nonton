@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Script from 'next/script'
-import { useEffect, useState } from 'react'
 import 'swiper/css'
 import 'tailwindcss/tailwind.css'
 import Footer from '../components/footer'
@@ -8,11 +7,7 @@ import Header from '../components/header'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
-  const [pageURL, setPageURL] = useState(0)
-
-  useEffect(() => {
-    setPageURL(window.location.origin)
-  })
+  const pageURL = process.env.NEXT_PUBLIC_BASE_URL
 
   return (
     <>
@@ -194,6 +189,8 @@ function MyApp({ Component, pageProps }) {
             src='//sstatic1.histats.com/0.gif?4564307&101'
             alt='free stats'
             border='0'
+            width={0}
+            height={0}
           />
         </a>
       </Head>

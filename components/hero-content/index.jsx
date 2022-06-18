@@ -15,7 +15,6 @@ export default function HeroContent(props) {
         src={`${background}`}
         alt={item.title || item.name}
         layout='fill'
-        loading='eager'
         className='-z-10'
         objectFit='cover'
         objectPosition='center'
