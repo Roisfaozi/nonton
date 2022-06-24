@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }) {
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='mobile-web-app-capable' content='yes' />
+        <meta name='propeller' content='ba872bb3b4d88836fb430e2bbaffba17' />
+
         <meta
           name='viewport'
           content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5'
