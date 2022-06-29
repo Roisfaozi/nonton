@@ -22,16 +22,17 @@ function MyApp({ Component, pageProps }) {
           content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5'
         />
         <link rel='canonical' href={`${pageURL}`} />
+        <meta
+          name='keywords'
+          content='online tv show, movies online, hollywood tv series, bollywood movies'
+        />
 
         <meta
           name='description'
           itemProp='description'
           content='Watch latest Star TV shows, movies, original series and live cricket on Nonton - hollywood premium video streaming service with more than 85,000 hours of drama and movies in 8 languages.'
         />
-        <meta
-          name='keywords'
-          content='online tv show, movies online, hollywood tv series, bollywood movies'
-        />
+
         <meta
           property='og:title'
           content='Nonton - Watch TV Shows, Movies, Live Cricket Matches &amp; News Online'
@@ -39,7 +40,7 @@ function MyApp({ Component, pageProps }) {
         <meta property='og:image' content='/images/Disney+Nonton.jpg' />
         <meta
           name='og:description'
-          itemProp='description'
+          itemProp='og:description'
           content='Watch latest Star TV shows, movies, original series and live cricket on Nonton - hollywood premium video streaming service with more than 85,000 hours of drama and movies in 8 languages.'
         />
         <meta
