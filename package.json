@@ -1,6 +1,7 @@
 {
   "private": true,
   "main": "index.js",
+  "homepage": "tontonan.netlify.app",
   "scripts": {
     "dev": "next",
     "build": "next build",
