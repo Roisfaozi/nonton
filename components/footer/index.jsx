@@ -10,7 +10,7 @@ export default function Footer() {
     <footer>
       <div className='footer-container'>
         © {year} Copyright: <a href={pageURL}>{pageURL}</a> | Designed by{' '}
-        <a href={pageURL}>Rois Faozi</a>
+        <a href='https://roisfaozi.com'>Rois Faozi</a>
       </div>
     </footer>
   )
